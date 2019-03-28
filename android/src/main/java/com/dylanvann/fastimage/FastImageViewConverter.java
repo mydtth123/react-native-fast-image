@@ -21,7 +21,7 @@ import com.facebook.react.bridge.NoSuchKeyException;
 import com.facebook.react.bridge.ReadableMap;
 import com.facebook.react.bridge.ReadableMapKeySetIterator;
 import com.facebook.react.views.imagehelper.ImageSource;
-
+import com.bumptech.glide.request.target.Target;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -106,6 +106,7 @@ class FastImageViewConverter {
                 .diskCacheStrategy(diskCacheStrategy)
                 .onlyRetrieveFromCache(onlyFromCache)
                 .skipMemoryCache(skipMemoryCache)
+                .override(Target.SIZE_ORIGINAL)
                 .priority(priority)
                 .placeholder(TRANSPARENT_DRAWABLE);
     }
